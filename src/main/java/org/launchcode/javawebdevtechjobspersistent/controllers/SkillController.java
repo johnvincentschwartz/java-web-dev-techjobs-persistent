@@ -19,7 +19,7 @@ public class SkillController {
     private SkillRepository skillRepository; //connect to skill data
 
     //?? 2(Controllers)(2): "Add an index method that responds at /skills with a list of all skills in the database ??
-    @GetMapping("/")
+    @GetMapping()
     public String index(Model model){
         model.addAttribute("skills", skillRepository.findAll());
         return "skills/index";
