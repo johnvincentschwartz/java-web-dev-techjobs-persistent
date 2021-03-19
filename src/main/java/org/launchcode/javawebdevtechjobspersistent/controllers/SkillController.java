@@ -1,6 +1,7 @@
 package org.launchcode.javawebdevtechjobspersistent.controllers;
 
 import org.launchcode.javawebdevtechjobspersistent.models.Skill;
+import org.launchcode.javawebdevtechjobspersistent.models.data.EmployerRepository;
 import org.launchcode.javawebdevtechjobspersistent.models.data.SkillRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,7 +19,7 @@ public class SkillController {
     @Autowired
     private SkillRepository skillRepository; //connect to skill data
 
-    //?? 2(Controllers)(2): "Add an index method that responds at /skills with a list of all skills in the database ??
+    //?? 2(Controllers)(2): "Add an index method that responds at /skills with a list of all skills in the database
     @GetMapping()
     public String index(Model model){
         model.addAttribute("skills", skillRepository.findAll());
