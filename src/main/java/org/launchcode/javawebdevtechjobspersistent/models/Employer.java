@@ -1,8 +1,6 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -19,8 +17,7 @@ public class Employer extends AbstractEntity {
     private String location;
 
 //Part 3 "Add jobs Field to employer"
-    @OneToMany
-    @JoinColumn
+    @OneToMany(mappedBy = "employer")
     private List<Job> jobs = new ArrayList<Job>();
 
     public String getLocation() {
